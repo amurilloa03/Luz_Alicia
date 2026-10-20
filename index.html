@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Factura de la Luz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 min-h-screen py-10 px-4 font-sans text-slate-800">
+
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+    <div class="bg-amber-500 px-8 py-6 text-white text-center">
+      <h1 class="text-2xl font-bold">⚡ Simulador de Factura de la Luz</h1>
+      <p class="text-amber-50 text-sm mt-1">Conectado a la API REST con FastAPI</p>
+    </div>
+
+    <form id="formulario-factura" class="p-8 space-y-6">
+      <div>
+        <label class="block text-sm font-semibold mb-1">Titular</label>
+        <input type="text" id="titular" required minlength="2" maxlength="50" placeholder="Ej: Alejandro Murillo"
+               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-semibold mb-1">Potencia (kW)</label>
+          <input type="number" id="potencia" min="1" max="15" step="any" required value="4.6"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1">Consumo (kWh)</label>
+          <input type="number" id="consumo" min="0" max="5000" step="any" required value="250"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1">Días</label>
+          <input type="number" id="dias" min="1" max="62" step="1" required value="30"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <label class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border cursor-pointer">
+          <input type="checkbox" id="discriminacion" class="w-5 h-5">
+          <span class="text-sm">Tarifa con discriminación horaria (consumo en horas valle)</span>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border cursor-pointer">
+          <input type="checkbox" id="bono" class="w-5 h-5">
+          <span class="text-sm">Tengo derecho al bono social</span>
+        </label>
+      </div>
+
+      <button type="submit" id="btn-enviar"
+              class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">
+        Calcular factura
+      </button>
+    </form>
+
+    <div id="panel-resultado" class="hidden p-8 border-t border-slate-100 bg-slate-50">
+      <div id="resultado-caja" class="p-6 rounded-xl border"></div>
+    </div>
+  </div>
+
+  <script src="./static/app.js"></script>
+</body>
+</html>
