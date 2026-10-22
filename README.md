@@ -142,7 +142,7 @@ Se usa `0.0.0.0` para aceptar conexiones externas y `$PORT` porque es Render qui
 
 Para comprobar si Render permite desplegar APIs con modelos de IA, se ha desplegado el repositorio del clasificador de imágenes de perros y gatos.
 
-**URL pública:** https://NOMBRE-DEL-CLASIFICADOR.onrender.com
+**URL pública:** https://perros-gatos-clasificador.onrender.com
 
 **Resultado:** ✅ Funciona. El modelo carga y clasifica correctamente las imágenes en el plan gratuito.
 
