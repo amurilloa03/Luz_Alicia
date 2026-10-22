@@ -5,8 +5,8 @@
 
 ## URL pública
 
-- **Aplicación web:** https://NOMBRE-DEL-SERVICIO.onrender.com
-- **Documentación Swagger:** https://NOMBRE-DEL-SERVICIO.onrender.com/docs
+- **Aplicación web:** https://luz-alicia.onrender.com
+
 
 > Desplegado en el plan gratuito de Render. Si el servicio lleva un rato sin usarse, la primera carga puede tardar alrededor de un minuto.
 
